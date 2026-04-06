@@ -10,10 +10,10 @@ void moverBispo(int casas) {
 	 int numero = 1; // variavel para controle dos loops
 
 	 while(numero > 0){ // loop externo - vertical
-	     printf("BISPO - ACIMA/");
+	     printf("BISPO - ACIMA/"); //movimento para cima
 
 		do { // loop interno - horizontal
-		  printf("DIREITA\n");	
+		  printf("DIREITA\n"); //movimento para direita	
 		} while( numero < 1);
 
 	    numero--; 
@@ -96,6 +96,7 @@ int main() {
 
     printf("\n*** MOVIMENTO DA RAINHA - recursividade) ***\n");
     moverRainha(8);
+
 
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
