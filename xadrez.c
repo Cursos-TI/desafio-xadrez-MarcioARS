@@ -4,6 +4,40 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+void moverBispo(int casas) {
+
+   if(casas > 0){  // testa se o numero ded casas é maior do que zero
+	 int numero = 1; // variavel para controle dos loops
+
+	 while(numero > 0){ // loop externo - vertical
+	     printf("BISPO - ACIMA/");
+
+		do { // loop interno - horizontal
+		  printf("DIREITA\n");	
+		} while( numero < 1);
+
+	    numero--; 
+	 }
+
+	 moverBispo(casas - 1);
+   }
+}
+
+
+void moverTorre(int casas) {
+    if(casas > 0){
+        printf("TORRE - DIREITA\n");
+        moverTorre(casas - 1);
+    }
+}
+
+void moverRainha(int casas) {
+    if(casas > 0){
+        printf("RAINHA - ESQUERDA\n");
+        moverRainha(casas - 1);
+    }
+}
+
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
@@ -54,8 +88,30 @@ int main() {
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
     // Exemplo: Crie uma função recursiva para o movimento do Bispo.
 
+    printf("\n*** MOVIMENTO DA BISPO - recursividade) ***\n");
+    moverBispo(5);
+
+    printf("\n*** MOVIMENTO DA TORRE - recursividade) ***\n");
+    moverTorre(5);
+
+    printf("\n*** MOVIMENTO DA RAINHA - recursividade) ***\n");
+    moverRainha(8);
+
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
+
+    printf("\n*** MOVIMENTO DA CAVALO (variaveis multiplas e condições avançadas) ***\n");
+
+    for(int i = 0 , j = 0; i < 5 && j < 5; i++, j++){
+        
+        if( (i + j) < 4 ) {
+            printf("CAVALO - CIMA\n");
+           continue;
+        } else {
+            printf("CAVALO - DIREITA\n");
+            break;
+        }
+    }
 
     return 0;
 }
